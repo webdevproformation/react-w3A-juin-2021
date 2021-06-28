@@ -1,13 +1,35 @@
 import Sidebar from "../commun/Sidebar";
 import ArticlesService from "../services/ArticlesService";
 import Like from "../commun/Like";
+import { useState } from "react";
+
 const Home = () => { 
     const objetArticle = new ArticlesService;
-    const articles = objetArticle.getActiveArticles();
+
+    const [articles, setArticles] = useState(objetArticle.getActiveArticles());
 
     function augmenterParent(id){
-        objetArticle.augmenteLike(id);
-        alert(`je suis la fonction parent ${id}`);
+       // const results = objetArticle.augmenteLike(id);
+       // console.log(results);
+        setArticles(prevState => {
+            console.log(prevState)
+            const articleRecherche = prevState.find((item) => { return item.id === id });
+            const index = prevState.indexOf(articleRecherche);
+            prevState[index].like++
+            return [...prevState] ;
+        }); // refresh de la vue ! 
+    }
+
+    function rechercher(texteRecherche){
+        setArticles(prevState => {
+           /*  console.log(`je suis la fonction recherché dans le parent ${texteRecherche}`);
+            console.log(prevState); */
+            const articlesFiltre = prevState.filter( (article) => { 
+                return article.titre.includes(texteRecherche)
+            });
+            // console.log(articlesFiltre);
+            return articlesFiltre;
+        });
     }
 
     return (
@@ -34,7 +56,7 @@ const Home = () => {
                 </div>
             </div>
             <div  className="col-3">
-                <Sidebar articles={articles} />
+                <Sidebar articles={articles} action={rechercher} />
             </div>
         </>
     )
