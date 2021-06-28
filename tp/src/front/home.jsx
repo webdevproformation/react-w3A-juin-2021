@@ -24,10 +24,14 @@ const Home = () => {
         setArticles(prevState => {
            /*  console.log(`je suis la fonction recherché dans le parent ${texteRecherche}`);
             console.log(prevState); */
+            if(texteRecherche.length === 0){
+                return objetArticle.getActiveArticles();
+            }
             const articlesFiltre = prevState.filter( (article) => { 
-                return article.titre.includes(texteRecherche)
+                return article.titre.toLowerCase().includes(texteRecherche.toLowerCase())
             });
             // console.log(articlesFiltre);
+            // rdv 15H50 @ toute suite !! 
             return articlesFiltre;
         });
     }
