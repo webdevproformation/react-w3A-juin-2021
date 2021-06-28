@@ -1,23 +1,8 @@
 import Sidebar from "../commun/Sidebar";
+import ArticlesService from "../services/ArticlesService";
 
 const Home = () => { 
-    const articles = [
-        {
-            id: 1 ,
-            titre : "article 1",
-            contenu : "lorem ipsum "
-        },
-        {
-            id: 2 ,
-            titre : "article 2",
-            contenu : "lorem ipsum "
-        },
-        {
-            id: 3 ,
-            titre : "article 3",
-            contenu : "lorem ipsum "
-        }
-    ];
+    const articles = (new ArticlesService()).getData();
     return (
         <>
             <h1>je suis la home page</h1>
