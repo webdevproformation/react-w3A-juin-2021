@@ -39,7 +39,7 @@ const Home = () => {
                 </div>
             </div>
             <div  className="col-3">
-                <Sidebar />
+                <Sidebar articles={articles} />
             </div>
         </>
     )
