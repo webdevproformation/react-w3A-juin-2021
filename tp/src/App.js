@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './commun/Navbar';
 import Footer from './commun/Footer';
 import Home from './front/home';
+import connexion from './front/connexion';
+import {Route} from "react-router-dom";
 
 function App() {
   return (
@@ -12,7 +14,8 @@ function App() {
         <Navbar />
       </header>  
       <main className="row">
-          <Home />
+          <Route path="/connexion" component={connexion} />
+          <Route path="/" component={Home} exact />
       </main>
       <Footer />
     </div>

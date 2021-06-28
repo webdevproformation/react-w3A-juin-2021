@@ -13,6 +13,11 @@ class Navbar extends React.Component {
                         <a href="#" className="nav-link">Accueil</a>
                     </li>
                 </ul>
+                <ul className="navbar-nav ms-auto">
+                    <li className="nav-item">
+                        <a href="connexion" className="nav-link">Connexion</a>
+                    </li>
+                </ul>
             </nav>
          );
     }
