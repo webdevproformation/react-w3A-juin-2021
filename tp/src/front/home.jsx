@@ -2,7 +2,7 @@ import Sidebar from "../commun/Sidebar";
 import ArticlesService from "../services/ArticlesService";
 
 const Home = () => { 
-    const articles = (new ArticlesService()).getData();
+    const articles = (new ArticlesService()).getActiveArticles();
     return (
         <>
             <h1>je suis la home page</h1>

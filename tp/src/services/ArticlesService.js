@@ -25,5 +25,9 @@ class ArticlesService{
     getData(){
         return this.data;
     }
+
+    getActiveArticles(){
+        return this.data.filter( (item) => { return item.isActif } )
+    }
 }
 export default ArticlesService ;
