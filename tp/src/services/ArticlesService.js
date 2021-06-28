@@ -31,3 +31,12 @@ class ArticlesService{
     }
 }
 export default ArticlesService ;
+
+// rdv 14h02 bon appétit 
+// Back office => une zone où l'on va pouvoir CRUD : 
+/**
+ * CREATE
+ * READ
+ * Update
+ * DELETE des articles 
+ */
