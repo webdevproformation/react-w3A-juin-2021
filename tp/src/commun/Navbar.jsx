@@ -1,5 +1,6 @@
 //imr 
 import React from 'react';
+import { Link } from "react-router-dom";
 
 // cc
 class Navbar extends React.Component {
@@ -7,15 +8,15 @@ class Navbar extends React.Component {
     render() { 
         return ( 
             <nav className="navbar navbar-expand navbar-light bg-light">
-                <a href="#" className="navbar-brand">TP semaine 3</a>
+                <Link to="/" className="navbar-brand">TP semaine 3</Link>
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href="#" className="nav-link">Accueil</a>
+                        <Link to="/" className="nav-link">Accueil</Link>
                     </li>
                 </ul>
                 <ul className="navbar-nav ms-auto">
                     <li className="nav-item">
-                        <a href="connexion" className="nav-link">Connexion</a>
+                        <Link to="/connexion" className="nav-link">Connexion</Link>
                     </li>
                 </ul>
             </nav>
