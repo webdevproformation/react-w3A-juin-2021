@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './commun/Navbar';
+import Footer from './commun/Footer';
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <header className="row">
         <Navbar />
       </header>  
+
+      <Footer />
     </div>
   );
 }
