@@ -1,3 +1,5 @@
+import Sidebar from "../commun/Sidebar";
+
 const Home = () => { 
     const articles = [
         {
@@ -19,19 +21,26 @@ const Home = () => {
     return (
         <>
             <h1>je suis la home page</h1>
-            {articles.map((article, index) => 
-                <article className="col-4" key={index}>
-                    <div className="card">
-                        <header class="card-header">
-                            <h2>{article.titre}</h2>
-                        </header>
-                        <img src="http://via.placeholder.com/300x200" alt="" />
-                        <div className="card-body">
-                            {article.contenu}
+            <div className="col-9">
+                <div className="row">
+                    {articles.map((article, index) => 
+                    <article className="col-4" key={index}>
+                        <div className="card">
+                            <header class="card-header">
+                                <h2>{article.titre}</h2>
+                            </header>
+                            <img src="http://via.placeholder.com/300x200" alt="" />
+                            <div className="card-body">
+                                {article.contenu}
+                            </div>
                         </div>
-                    </div>
-                </article>
-            )}
+                    </article>
+                    )}
+                </div>
+            </div>
+            <div  className="col-3">
+                <Sidebar />
+            </div>
         </>
     )
 }  

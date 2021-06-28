@@ -12,7 +12,7 @@ function App() {
         <Navbar />
       </header>  
       <main className="row">
-        <Home />
+          <Home />
       </main>
       <Footer />
     </div>
