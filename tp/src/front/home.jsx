@@ -2,9 +2,11 @@ import Sidebar from "../commun/Sidebar";
 import ArticlesService from "../services/ArticlesService";
 import Like from "../commun/Like";
 const Home = () => { 
-    const articles = ArticlesService.getActiveArticles();
+    const objetArticle = new ArticlesService;
+    const articles = objetArticle.getActiveArticles();
 
     function augmenterParent(id){
+        objetArticle.augmenteLike(id);
         alert(`je suis la fonction parent ${id}`);
     }
 

@@ -1,5 +1,5 @@
 class ArticlesService{
-    static data = [
+    data = [
         {
             id: 1 ,
             titre : "article 1",
@@ -22,12 +22,19 @@ class ArticlesService{
             isActif : true
         }
     ];
-    static getData(){
-        return ArticlesService.data;
+    getData(){
+        return this.data;
     }
 
-    static getActiveArticles(){
-        return ArticlesService.data.filter( (item) => { return item.isActif } )
+    getActiveArticles(){
+        return this.data.filter( (item) => { return item.isActif } )
+    }
+
+    augmenteLike(id){
+        const articleRecherche = this.data.find((item) => { return item.id === id });
+        const index = this.data.indexOf(articleRecherche);
+        this.data[index].like++; // augmenter le nombre de like 
+        console.log(this.data);
     }
 }
 export default ArticlesService ;
