@@ -1,5 +1,5 @@
 class ArticlesService{
-    data = [
+    static data = [
         {
             id: 1 ,
             titre : "article 1",
@@ -22,12 +22,12 @@ class ArticlesService{
             isActif : true
         }
     ];
-    getData(){
-        return this.data;
+    static getData(){
+        return ArticlesService.data;
     }
 
-    getActiveArticles(){
-        return this.data.filter( (item) => { return item.isActif } )
+    static getActiveArticles(){
+        return ArticlesService.data.filter( (item) => { return item.isActif } )
     }
 }
 export default ArticlesService ;
