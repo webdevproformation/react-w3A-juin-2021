@@ -1,10 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './commun/Navbar';
 
 function App() {
   return (
     <div className="container">
       <header className="row">
-        <h1 className="text-success">Projet semaine 3</h1>  
+        <Navbar />
       </header>  
     </div>
   );
