@@ -14,8 +14,8 @@ class Connexion extends Component {
         e.preventDefault();
         const {login, password} = this.state.identifiants;
         if(login === "hello" && password === "les amis"){
-            this.props.history("/admin");
-            
+            this.props.history.push("/admin"); // redirection vers l'accueil de l'admin
+            // console.log(this.props.replace("/loca"))
             // back office
             // appeler des services 
             // authentifications 

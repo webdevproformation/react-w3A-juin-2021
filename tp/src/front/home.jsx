@@ -4,18 +4,17 @@ import Like from "../commun/Like";
 import { useState } from "react";
 
 const Home = () => { 
-    const objetArticle = new ArticlesService;
-
-    const [articles, setArticles] = useState(objetArticle.getActiveArticles());
+    
+    const [articles, setArticles] = useState((new ArticlesService()).getActiveArticles());
+    //const objetArticle = new ArticlesService();
 
     function augmenterParent(id){
-       // const results = objetArticle.augmenteLike(id);
-       // console.log(results);
         setArticles(prevState => {
-            console.log(prevState)
+      
             const articleRecherche = prevState.find((item) => { return item.id === id });
             const index = prevState.indexOf(articleRecherche);
-            prevState[index].like++
+            prevState[index].like = prevState[index].like + 1;
+           
             return [...prevState] ;
         }); // refresh de la vue ! 
     }
@@ -25,7 +24,7 @@ const Home = () => {
            /*  console.log(`je suis la fonction recherché dans le parent ${texteRecherche}`);
             console.log(prevState); */
             if(texteRecherche.length === 0){
-                return objetArticle.getActiveArticles();
+                return (new ArticlesService()).getActiveArticles()
             }
             const articlesFiltre = prevState.filter( (article) => { 
                 return article.titre.toLowerCase().includes(texteRecherche.toLowerCase())
