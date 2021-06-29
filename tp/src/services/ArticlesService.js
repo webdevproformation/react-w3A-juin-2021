@@ -46,6 +46,15 @@ class ArticlesService{
 
         console.log(ArticlesService.data);
     }
+
+    delete(id){
+       //const articleASupprimer = ArticlesService.data.find((article) => { return article.id === id });
+       // const index = ArticlesService.data.indexOf(articleASupprimer);
+
+       // ArticlesService.data.splice( index, 1 ); // effectuer la suppression 
+
+       ArticlesService.data = ArticlesService.data.filter((article) => { return article.id !== id });
+    }
 }
 export default ArticlesService ;
 

@@ -6,6 +6,16 @@ class Dashboard extends Component {
     state = { 
         articles : (new ArticlesService()).getData()
     }
+
+    handleDelete = (id) => {
+        const services  = new ArticlesService();
+        services.delete(id);
+        this.setState({
+            articles : (new ArticlesService()).getData()
+        })
+        // this.props.history.push("/admin");
+    }
+
     render() { 
         const {articles} = this.state;
         return ( 
@@ -35,7 +45,7 @@ class Dashboard extends Component {
                                 <td>
                                     <button className="btn btn-primary">voir</button>
                                     <button className="btn btn-warning mx-3">modifier</button>
-                                    <button className="btn btn-danger">supprimer</button>
+                                    <button className="btn btn-danger" onClick={() => this.handleDelete(article.id)}>supprimer</button>
                                 </td>
                             </tr>
                     } )}
