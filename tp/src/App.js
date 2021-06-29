@@ -11,6 +11,7 @@ import Single from './front/single';
 import Dashboard from './back/dashboard';
 import AddArticle from './back/article/AddArticle'
 import UpdateArticle from './back/article/UpdateArticle'
+import Api from './front/Api'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Navbar />
       </header>
       <main className="row">
+          <Route path="/api" component={Api} />
           <Route path="/admin/modif/:id" component={UpdateArticle} />
           <Route path="/admin/add" component={AddArticle} />
           <Route path="/admin" component={Dashboard}  exact />

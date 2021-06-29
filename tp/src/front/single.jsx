@@ -9,7 +9,7 @@ const Single = (props) => {
         const id = +props.match.params.id; 
         const service = new ArticlesService();
         setArticle(service.getFirst(id))
-    } , []);
+    } , [props.match.params.id]);
     return (
         <div className="col-12">
             <h1>{article.titre}</h1>

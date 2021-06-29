@@ -11,12 +11,11 @@ const UpdateArticle = (props) => {
         const id = +props.match.params.id; 
         const service = new ArticlesService();
         const articleAModifier = service.getFirst(id);
-        console.log(articleAModifier);
         setTitre(articleAModifier.titre);
         setContenu(articleAModifier.contenu);
         setStatus(articleAModifier.isActif);
         setId(articleAModifier.id);
-    }, [+props.match.params.id])
+    },[props.match.params.id])
 
    function handleSubmit(e){
        e.preventDefault();
