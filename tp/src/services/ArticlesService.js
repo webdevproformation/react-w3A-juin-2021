@@ -1,5 +1,5 @@
 class ArticlesService{
-    data = [
+    static data = [
         {
             id: 1 ,
             titre : "Nouvel article 1",
@@ -23,11 +23,11 @@ class ArticlesService{
         }
     ];
     getData(){
-        return this.data;
+        return ArticlesService.data;
     }
 
     getActiveArticles(){
-        return this.data.filter( (item) => { return item.isActif } )
+        return ArticlesService.data.filter( (item) => { return item.isActif } )
     }
 
     augmenteLike(id){
@@ -37,6 +37,14 @@ class ArticlesService{
         cloneData[index].like++; // augmenter le nombre de like 
         console.log(index, cloneData[index]);
         return this.getActiveArticles();
+    }
+
+    add(article){
+        // ajouter une propriété id
+        article.id = ArticlesService.data[ArticlesService.data.length - 1].id + 1
+        ArticlesService.data.push(article); // ajouter un nouvel article !
+
+        console.log(ArticlesService.data);
     }
 }
 export default ArticlesService ;

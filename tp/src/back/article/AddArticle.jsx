@@ -1,6 +1,7 @@
 import {useState} from "react";
+import ArticlesService from "../../services/ArticlesService";
 
-const AddArticle = () => {
+const AddArticle = (props) => {
    const [titre, setTitre] =  useState("un titre");
    const [contenu, setContenu] = useState("un contenu par défaut");
    const [status, setStatus] = useState(0);
@@ -14,7 +15,10 @@ const AddArticle = () => {
            isActif : status,
            like : 0
        }
-       console.log(nouvelArticle);
+       const service = new ArticlesService();
+       service.add(nouvelArticle);
+       props.history.push("/admin");
+       // console.log(nouvelArticle);
    }
     return (
         <>
