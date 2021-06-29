@@ -47,8 +47,8 @@ const UpdateArticle = (props) => {
                 <div className="form-group">
                     <label htmlFor="status">status</label>
                     <select name="status" id="status" className="form-select" onChange={ (e) => setStatus(!!+e.currentTarget.value) } value={ status === true ? 1 : 0 }>
-                        <option value="1" selected={ status === 1 ? true : false }>Actif</option>
-                        <option value="0" selected={ status === 0 ? true : false }>Inactif</option>
+                        <option value="1">Actif</option>
+                        <option value="0">Inactif</option>
                     </select>
                 </div>
                 <div className="form-group mt-3">
