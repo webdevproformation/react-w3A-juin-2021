@@ -7,6 +7,7 @@ import Home from './front/home';
 import Connexion from './front/connexion';
 import {Route} from "react-router-dom";
 import Dashboard from './back/dashboard';
+import AddArticle from './back/article/AddArticle'
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         <Navbar />
       </header>
       <main className="row">
-          <Route path="/admin" component={Dashboard} />
+          <Route path="/admin/add" component={AddArticle} />
+          <Route path="/admin" component={Dashboard}  exact />
           <Route path="/connexion" component={Connexion} />
           <Route path="/" component={Home} exact />
       </main>

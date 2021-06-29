@@ -2,7 +2,6 @@ const Like = ({nb,id, augmente}) => {
 
     function augmenter(){
         augmente(id);
-        console.log("Like")
         // appeler une fonction qui est stockée dans le composant parent home 
     }
 
