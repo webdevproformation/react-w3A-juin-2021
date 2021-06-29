@@ -11,6 +11,7 @@ import Single from './front/single';
 import Dashboard from './back/dashboard';
 import AddArticle from './back/article/AddArticle'
 import UpdateArticle from './back/article/UpdateArticle'
+import ApiSingle from './front/ApiSingle';
 import Api from './front/Api'
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Navbar />
       </header>
       <main className="row">
-          <Route path="/api" component={Api} />
+          <Route path="/api/:id" component={ApiSingle} />
+          <Route path="/api" component={Api} exact />
           <Route path="/admin/modif/:id" component={UpdateArticle} />
           <Route path="/admin/add" component={AddArticle} />
           <Route path="/admin" component={Dashboard}  exact />
