@@ -1,0 +1,58 @@
+
+Front => react / javascript 
+service => appeler une url => Methode GET / POST / PUT / DELETE 
+demandes CRUD
+récupère la réponse =>
+react composant state => render 
+
+------------------ 
+
+Back => NodeJS + Express 
+    port d'écoute = 1 url = 1 table
+
+    récupérer ta demande répartir => gestionnaire de base de données 
+    réponse {} + code réponse 200 / 400 / 500 / 403 
+
+Base de données => NodeJS + MongoDB
+
+https://github.com/typicode/json-server
+
+lancer un terminal 
+
+npm install -g json-server
+0.16.3
+------------------ 
+
+permet de générer un back très très facilement 
+
+à côté de dossier tp créer un nouveau dossier bdd
+dans ce dossier créer un fichier db.json 
+
+------------------ 
+
+json generator => https://www.json-generator.com/
+{
+    "articles": [
+    '{{repeat(20)}}',
+    {
+      id: '{{objectId()}}',
+      titre: '{{lorem(5, "words")}}',
+      contenu: '{{lorem(3, "paragraphs")}}',
+      like:'{{integer(0, 40)}}',
+      isActif : '{{bool()}}'
+    }
+    ]
+}
+
+
+copier coller le json généré dans le fichier db.json 
+
+rester démarrer le serveur 
+
+cd bdd 
+json-server --watch db.json --port 3004
+
+axios => client http => requêtes ajax 
+fetch() requeête http ajax !! 
+
+=> 15h50 bon café @ toute suite !!! 
