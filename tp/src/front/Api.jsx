@@ -3,7 +3,7 @@ import axios from 'axios';
 import Hook from "../commun/Hook";
 import {Link} from "react-router-dom";
 
-function Api (){
+function Api (props){
     const [articles , setArticles] = useState([])
     useEffect(() => {
         async  function getData(){
@@ -15,7 +15,7 @@ function Api (){
     return (
         <>
             <h1>j'utilise une api</h1>
-            <Hook />
+            <Hook route={props}/>
             {articles.map((article, index) => {
                 return <h2 key={index}>
                         <Link to={`/api/${article.id}`}>
