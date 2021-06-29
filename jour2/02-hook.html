@@ -1,0 +1,34 @@
+Composant a un cycle de vie
+
+3 étapes 
+    affichage et synchonisation avec le DOM => Mount 
+
+    en cas de modification d'une props / state => Update
+
+    en cas de suppression du DOM => Unmount 
+
+lorsque l'on utilise les class pour créer des composants
+
+class Composant extends Component{
+
+    componentDidMount(){
+        // exécutée une fois lorsque le composant est affiché dans le DOM
+    }
+
+    componentDidUpdate(){
+        // exécutée suite à la mise à jour / modification d'une props / state  
+    }
+
+    componentWillUnmount(){
+        // en cas de suppression du DOM
+    }
+
+}
+
+useEffect() pour les composants fonctionnels va prendre le rôle de ces trois fonctions 
+
+function Element (){
+    useEffect(() => {} ); // rafraichissement de la vue du composant 
+}
+
+Hook.jsx 

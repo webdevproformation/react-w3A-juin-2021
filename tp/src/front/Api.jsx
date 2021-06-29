@@ -1,5 +1,6 @@
 import { useState , useEffect } from 'react';
 import axios from 'axios';
+import Hook from "../commun/Hook";
 function Api (){
     const [articles , setArticles] = useState([])
     useEffect(() => {
@@ -12,6 +13,7 @@ function Api (){
     return (
         <>
             <h1>j'utilise une api</h1>
+            <Hook />
             {articles.map((article, index) => {
                 return <h2 key={index}>{article.titre}</h2>
             })}
