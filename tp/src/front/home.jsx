@@ -2,6 +2,7 @@ import Sidebar from "../commun/Sidebar";
 import ArticlesService from "../services/ArticlesService";
 import Like from "../commun/Like";
 import { useState } from "react";
+import {Link} from "react-router-dom";
 
 const Home = () => { 
     
@@ -50,8 +51,9 @@ const Home = () => {
                             <div className="card-body">
                                 {article.contenu}
                             </div>
-                            <div className="card-footer">
-                                <Like nb={article.like} id={article.id} augmente={augmenterParent} />
+                            <div className="card-footer d-flex justify-content-between">
+                        <Like nb={article.like} id={article.id} augmente={augmenterParent} />
+                        <Link to={`/article/${article.id}`} className="btn btn-dark">voir &rarr; </Link>
                             </div>
                         </div>
                     </article>
