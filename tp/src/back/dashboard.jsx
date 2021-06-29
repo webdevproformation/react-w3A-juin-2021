@@ -44,7 +44,7 @@ class Dashboard extends Component {
                                 <td>{article.isActif ? "Actif" : "Inactif" }</td>
                                 <td>
                         <Link className="btn btn-primary" to={`/article/${article.id}`}>voir</Link>
-                        <button className="btn btn-warning mx-3">modifier</button>
+                        <Link className="btn btn-warning mx-3" to={`/admin/modif/${article.id}`}>modifier</Link>
                         <button className="btn btn-danger" onClick={() => this.handleDelete(article.id)}>supprimer</button>
                                 </td>
                             </tr>

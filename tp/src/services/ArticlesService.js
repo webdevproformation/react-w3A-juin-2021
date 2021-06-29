@@ -59,6 +59,18 @@ class ArticlesService{
     getFirst(id){
         return ArticlesService.data.filter((article) => { return article.id === id })[0];
     }
+
+    update(articleAModifier){
+        // chercher l'article 
+        let articleTrouve = ArticlesService.data.find((article) => {return article.id === articleAModifier.id});
+        // index 
+        const index = ArticlesService.data.indexOf(articleTrouve);
+        // fusion 
+        console.log(index);
+        console.log(ArticlesService.data[index]);
+        console.log(articleAModifier);
+        ArticlesService.data[index] = { ...ArticlesService.data[index] , ...articleAModifier}
+    }
 }
 export default ArticlesService ;
 

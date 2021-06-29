@@ -1,40 +1,52 @@
-import {useState} from "react";
+import {useState , useEffect} from "react";
 import ArticlesService from "../../services/ArticlesService";
 
-const AddArticle = (props) => {
-   const [titre, setTitre] =  useState("un titre");
-   const [contenu, setContenu] = useState("un contenu par défaut");
+const UpdateArticle = (props) => {
+   const [titre, setTitre] =  useState("");
+   const [contenu, setContenu] = useState("");
    const [status, setStatus] = useState(1);
+   const [id, setId] = useState(1);
+
+    useEffect(() => {
+        const id = +props.match.params.id; 
+        const service = new ArticlesService();
+        const articleAModifier = service.getFirst(id);
+        console.log(articleAModifier);
+        setTitre(articleAModifier.titre);
+        setContenu(articleAModifier.contenu);
+        setStatus(articleAModifier.isActif);
+        setId(articleAModifier.id);
+    }, [+props.match.params.id])
 
    function handleSubmit(e){
        e.preventDefault();
 
-       const nouvelArticle = {
+       const articleAModifier = {
+           id : id , 
            titre : titre,
            contenu : contenu ,
-           isActif : status,
-           like : 0
+           isActif : status
        }
        const service = new ArticlesService();
-       service.add(nouvelArticle);
-       props.history.push("/admin");
-       // console.log(nouvelArticle);
+       service.update(articleAModifier);
+       props.history.push("/admin"); 
    }
     return (
         <>
-            <h1>Ajouter une nouvel article</h1>
+            <h1>Modifier un article</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
+                    <input type="hidden" name="id" value={id}/>
                     <label htmlFor="titre">titre</label>
                     <input type="text" className="form-control" id="titre" name="titre" value={titre} onChange={ (e) => setTitre(e.currentTarget.value) }/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="contenu">contenu</label>
-                    <textarea name="contenu" id="contenu"  rows="5" className="form-control" onChange={ (e) => setContenu(e.currentTarget.value) }>{contenu}</textarea>
+                    <textarea name="contenu" id="contenu"  rows="5" className="form-control" onChange={ (e) => setContenu(e.currentTarget.value) } value={contenu}></textarea>
                 </div>
                 <div className="form-group">
                     <label htmlFor="status">status</label>
-                    <select name="status" id="status" className="form-select" onChange={ (e) => setStatus(!!+e.currentTarget.value) }>
+                    <select name="status" id="status" className="form-select" onChange={ (e) => setStatus(!!+e.currentTarget.value) } value={ status === true ? 1 : 0 }>
                         <option value="1" selected={ status === 1 ? true : false }>Actif</option>
                         <option value="0" selected={ status === 0 ? true : false }>Inactif</option>
                     </select>
@@ -47,4 +59,4 @@ const AddArticle = (props) => {
     )
 }
 
-export default AddArticle;
+export default UpdateArticle;

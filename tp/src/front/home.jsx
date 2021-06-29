@@ -48,12 +48,13 @@ const Home = () => {
                                 <h2>{article.titre}</h2>
                             </header>
                             <img src="http://via.placeholder.com/300x200" alt="" />
-                            <div className="card-body">
+                            <div className="card-body multiligne">
                                 {article.contenu}
                             </div>
                             <div className="card-footer d-flex justify-content-between">
                         <Like nb={article.like} id={article.id} augmente={augmenterParent} />
                         <Link to={`/article/${article.id}`} className="btn btn-dark">voir &rarr; </Link>
+                        {/**bon appétit rdv 14h00 !!! @ toute suite !!  */}
                             </div>
                         </div>
                     </article>

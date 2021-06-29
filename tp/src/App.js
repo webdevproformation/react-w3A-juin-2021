@@ -10,6 +10,7 @@ import Connexion from './front/connexion';
 import Single from './front/single';
 import Dashboard from './back/dashboard';
 import AddArticle from './back/article/AddArticle'
+import UpdateArticle from './back/article/UpdateArticle'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Navbar />
       </header>
       <main className="row">
+          <Route path="/admin/modif/:id" component={UpdateArticle} />
           <Route path="/admin/add" component={AddArticle} />
           <Route path="/admin" component={Dashboard}  exact />
           <Route path="/article/:id" component={Single} />

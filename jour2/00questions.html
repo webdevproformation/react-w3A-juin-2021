@@ -77,3 +77,18 @@ const resultat = [{id : 2},{ id : 10},{id : 15},{id : 100}].filter((item) => { i
 resultat // [{ id : 10}][0] // permet de supprimer le tableau autour de l'objet 
 
 resultat // { id : 10}
+
+Cas pratique :
+Modifier => créer un nouveau composant dans le dossier src/back/article 
+
+updateArticle 
+
+=> formulaire 
+    id input hidden
+    titre  text
+    contenu textarea 
+    menu déroulant status
+
+=> soumettre ce formulaire => mettre ajout l'article concerné dans le service 
+=> créer une méthode update dans le service (article à mettre à jour )
+
