@@ -55,6 +55,10 @@ class ArticlesService{
 
        ArticlesService.data = ArticlesService.data.filter((article) => { return article.id !== id });
     }
+
+    getFirst(id){
+        return ArticlesService.data.filter((article) => { return article.id === id })[0];
+    }
 }
 export default ArticlesService ;
 

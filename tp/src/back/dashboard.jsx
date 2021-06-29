@@ -43,9 +43,9 @@ class Dashboard extends Component {
                                 <td>{article.titre}</td>
                                 <td>{article.isActif ? "Actif" : "Inactif" }</td>
                                 <td>
-                                    <button className="btn btn-primary">voir</button>
-                                    <button className="btn btn-warning mx-3">modifier</button>
-                                    <button className="btn btn-danger" onClick={() => this.handleDelete(article.id)}>supprimer</button>
+                        <Link className="btn btn-primary" to={`/article/${article.id}`}>voir</Link>
+                        <button className="btn btn-warning mx-3">modifier</button>
+                        <button className="btn btn-danger" onClick={() => this.handleDelete(article.id)}>supprimer</button>
                                 </td>
                             </tr>
                     } )}
