@@ -21,10 +21,10 @@ function Hook({refresh, data}){
         /* console.log({titre, contenu}) */
         if(id.length > 0){
             // update à réaliser
-            const reponse = await axios.put(`http://localhost:3004/articles/${id}`, {id, titre, contenu , isActif : true});
+            await axios.put(`http://localhost:3004/articles/${id}`, {id, titre, contenu , isActif : true});
         }   else {
             // insert à réaliser 
-            const reponse = await axios.post("http://localhost:3004/articles", {titre, contenu , isActif : true});
+            await axios.post("http://localhost:3004/articles", {titre, contenu , isActif : true});
         }
         // réinitialise le formulaire 
         setId("")
@@ -37,7 +37,7 @@ function Hook({refresh, data}){
    
     return (
         <div>
-            <input type="hidden"  value={id}  className="form-control" data-id />
+            <input type="hidden"  value={id} onChange={(e) => setId(e.currentTarget.value)} className="form-control" />
             <input type="text" onChange={(e) => setTitre(e.currentTarget.value)} value={titre}
             placeholder="saisir un texte" className="form-control" />
             <textarea value={contenu} onChange={(e) => setContenu(e.currentTarget.value)}  placeholder="saisir un contenu"  className="form-control mt-3"></textarea>

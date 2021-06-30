@@ -14,7 +14,7 @@ function ApiSingle (props){
             props.history.push("/");
         }
         getArticle();
-    }, [props.match.params.id])
+    }, [props.match.params.id , props.history])
     return (
         <>
             <h2>{article.titre}</h2>
