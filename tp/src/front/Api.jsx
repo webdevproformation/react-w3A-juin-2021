@@ -5,19 +5,20 @@ import {Link} from "react-router-dom";
 
 function Api (props){
     const [articles , setArticles] = useState([]);
+
+    async  function getData(){
+        const {data} = await axios.get("http://localhost:3004/articles?isActif=true");
+        setArticles(data);
+    }
+
     useEffect(() => {
-        async  function getData(){
-            const {data} = await axios.get("http://localhost:3004/articles?isActif=true");
-            setArticles(data);
-        }
         getData();
     }, []);
 
     const handleDelete = async id => {
         const reponse = await axios.delete(`http://localhost:3004/articles/${id}`);
         console.log(reponse);
-        const {data} = await axios.get("http://localhost:3004/articles?isActif=true");
-        setArticles(data);
+        getData()
     }
 
     return (
