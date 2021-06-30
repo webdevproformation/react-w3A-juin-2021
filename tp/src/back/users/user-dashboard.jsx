@@ -14,6 +14,14 @@ const UserDachboard = () => {
 
      }, [ users ])
 
+    async function handleDelete(id){
+        const { data } = await axios.get("http://localhost:3004/users")
+        if(data.length > 1){
+            await axios.delete(`http://localhost:3004/users/${id}`);
+            getUsers();
+        }
+    }
+
     return (
         <>
             <hr className="mt-4" />
@@ -35,7 +43,7 @@ const UserDachboard = () => {
                         <td>{user.login}</td>
                         <td>
                             <Link to={`/admin/user-modif/${user.id}`}  className="btn btn-warning">Modifier</Link>
-                            <button className="btn btn-dark ms-3">Supprimer</button>
+                            <button className="btn btn-dark ms-3" onClick={() => { handleDelete(user.id)}}>Supprimer</button>
                         </td>
                     </tr>
                 })}
