@@ -108,5 +108,11 @@
       "like": 30,
       "isActif": false
     }
+  ],
+  "users" : [
+    {
+      "login": "hello",
+      "password" : "les amis"
+    }
   ]
 }

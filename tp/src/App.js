@@ -16,6 +16,7 @@ import Api from './front/Api'
 import Forbidden from './front/forbidden';
 
 import { isLogged } from './services/auth';
+import NotFound from './front/not-found';
 
 
 function App() {
@@ -32,7 +33,9 @@ function App() {
           <Route path="/admin" render={ () => { return (isLogged()) ? <Dashboard /> : <Forbidden /> } }   exact />
           <Route path="/article/:id" component={Single} />
           <Route path="/connexion" component={Connexion} />
+          <Route path="/not-found" component={NotFound} />
           <Route path="/" component={Home} exact />
+          {/* <Redirect to="/not-found" /> */}
       </main>
       <Footer />
     </div>

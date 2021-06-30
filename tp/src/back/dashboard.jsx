@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ArticlesService from "../services/ArticlesService";
 import {Link} from "react-router-dom";
+import UserDachboard from './users/user-dashboard';
 
 class Dashboard extends Component {
     state = { 
@@ -51,6 +52,7 @@ class Dashboard extends Component {
                     } )}
                     </tbody>
                 </table>
+                    <UserDachboard />
                 </div>
             </>
         );
