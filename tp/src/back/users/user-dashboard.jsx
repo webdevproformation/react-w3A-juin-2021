@@ -1,5 +1,6 @@
 import {useEffect , useState} from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const UserDachboard = () => {
     const [users , setUsers] = useState([{}]);
@@ -15,8 +16,9 @@ const UserDachboard = () => {
 
     return (
         <>
-            <hr />
+            <hr className="mt-4" />
             <h2>Gestion des utilisateurs </h2>
+            <Link to={`/admin/user-add`}  className="btn btn-success my-4">Ajouter un nouvel utilisateur</Link>
             <table className="table table striped">
                 <thead>
                 <tr>
@@ -28,10 +30,11 @@ const UserDachboard = () => {
                 <tbody>
                 {users.map((user, index) => { 
                     return <tr key={index}>
-                        <td>id</td>
+                        <td>{user.id}</td>
                         <td>{user.login}</td>
                         <td>
-                            actions
+                            <Link to={`/admin/user-modif/${user.id}`}  className="btn btn-warning">Modifier</Link>
+                            <button className="btn btn-dark ms-3">Supprimer</button>
                         </td>
                     </tr>
                 })}

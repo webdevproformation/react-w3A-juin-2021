@@ -111,6 +111,7 @@
   ],
   "users" : [
     {
+      "id" : 1,
       "login": "hello",
       "password" : "les amis"
     }
