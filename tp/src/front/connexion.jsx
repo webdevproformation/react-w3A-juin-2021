@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {login as AuthLogin} from "../services/auth";
 
 class Connexion extends Component {
     state = { 
@@ -13,12 +14,9 @@ class Connexion extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         const {login, password} = this.state.identifiants;
-        if(login === "hello" && password === "les amis"){
-            this.props.history.push("/admin"); // redirection vers l'accueil de l'admin
-            // console.log(this.props.replace("/loca"))
-            // back office
-            // appeler des services 
-            // authentifications 
+        const verif = AuthLogin(login , password);
+        if(verif){
+            window.location.href = "/admin";
         }
     }
     render() { 

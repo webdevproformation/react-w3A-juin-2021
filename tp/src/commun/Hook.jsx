@@ -32,7 +32,6 @@ function Hook({refresh, data}){
         setContenu("");
 
         refresh();
-       
     }
    
     return (
