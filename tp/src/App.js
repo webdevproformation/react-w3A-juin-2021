@@ -13,9 +13,12 @@ import AddArticle from './back/article/AddArticle'
 import UpdateArticle from './back/article/UpdateArticle'
 import ApiSingle from './front/ApiSingle';
 import Api from './front/Api'
+import Forbidden from './front/forbidden';
+
+import { isLogged } from './services/auth';
+
 
 function App() {
-  console.log(window.location);
   return (
     <div className="container template">
       <header className="row">
@@ -24,9 +27,9 @@ function App() {
       <main className="row">
           <Route path="/api/:id" component={ApiSingle} />
           <Route path="/api" component={Api} exact />
-          <Route path="/admin/modif/:id" component={UpdateArticle} />
-          <Route path="/admin/add" component={AddArticle} />
-          <Route path="/admin" component={Dashboard}  exact />
+          <Route path="/admin/modif/:id" render={ () => { return (isLogged()) ? <UpdateArticle /> : <Forbidden /> } }/>
+          <Route path="/admin/add" render={ () => { return (isLogged()) ? <AddArticle /> : <Forbidden /> } }/>
+          <Route path="/admin" render={ () => { return (isLogged()) ? <Dashboard /> : <Forbidden /> } }   exact />
           <Route path="/article/:id" component={Single} />
           <Route path="/connexion" component={Connexion} />
           <Route path="/" component={Home} exact />
