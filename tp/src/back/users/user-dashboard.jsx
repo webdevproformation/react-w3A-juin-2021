@@ -19,6 +19,7 @@ const UserDachboard = () => {
             <hr className="mt-4" />
             <h2>Gestion des utilisateurs </h2>
             <Link to={`/admin/user-add`}  className="btn btn-success my-4">Ajouter un nouvel utilisateur</Link>
+            {/**rdv 15h45 @ toute suite !!  */}
             <table className="table table striped">
                 <thead>
                 <tr>

@@ -109,11 +109,26 @@
       "isActif": false
     }
   ],
-  "users" : [
+  "users": [
     {
-      "id" : 1,
+      "id": 1,
       "login": "hello",
-      "password" : "les amis"
+      "password": "les amis"
+    },
+    {
+      "login": "utilisateur1",
+      "password": "azerty",
+      "id": 2
+    },
+    {
+      "login": "utilisateur2",
+      "password": 2224739876,
+      "id": 3
+    },
+    {
+      "login": "utilisateur3",
+      "password": 2224739876,
+      "id": 4
     }
   ]
 }

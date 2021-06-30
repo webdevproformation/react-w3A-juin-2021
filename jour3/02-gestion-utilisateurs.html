@@ -20,3 +20,23 @@ créer dans le dossier back un nouveau dossier user
     axios.get("http://localhost:3004/users") pour récupérer tous users disponibles 
 
     afficher sous forme de tableau (bootstrap pour la mis en forme )
+
+=> réaliser l'ajout et la modification / la suppression des utilisateurs 
+
+ajout
+formulaire  avec 2 champs login et password
+    login et mot de passe  => crypter le mot de passe qui va être ajouté dans la base de données 
+
+Modification 
+formulaire  avec 3 champs id login et password
+    le champ mot de passe doit être vide récupérer l'id et le login 
+    le champ password est vide par défaut => uniquement si l'utilisateur le rempli => mettre à jour le mot de passe 
+
+suppression 
+    vérifier que au minimum il y a un compteur utilisateur si c'est ok => 
+    suppression du compte concerné 
+
+Bonus : 
+=> sécuriser la route ajout et la modification des comptes utilisateurs 
+cd bdd
+json-server --watch  db.json --port 3004

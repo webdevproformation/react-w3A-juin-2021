@@ -17,6 +17,9 @@ import Forbidden from './front/forbidden';
 
 import { isLogged } from './services/auth';
 import NotFound from './front/not-found';
+import { AddUser } from './back/users/addUser';
+
+
 
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
       <main className="row">
           <Route path="/api/:id" component={ApiSingle} />
           <Route path="/api" component={Api} exact />
+          <Route path="/admin/user-add" render={ (props) => { return (isLogged()) ? <AddUser  {...props} /> : <Forbidden /> } }/>
           <Route path="/admin/modif/:id" render={ () => { return (isLogged()) ? <UpdateArticle /> : <Forbidden /> } }/>
           <Route path="/admin/add" render={ () => { return (isLogged()) ? <AddArticle /> : <Forbidden /> } }/>
           <Route path="/admin" render={ () => { return (isLogged()) ? <Dashboard /> : <Forbidden /> } }   exact />

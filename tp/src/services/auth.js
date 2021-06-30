@@ -14,9 +14,9 @@ export function login(  login, password ){
 export function logout(){
     localStorage.removeItem("auth");
     // localStorage => supprimer l'info dans le localStorage 
-    //const urlEncours = window.location.pathname;
+    const urlEncours = window.location.pathname;
 
-    // (urlEncours !== "/api") ? window.location.href = "/" :  window.location.href = "/api"
+    (urlEncours !== "/api") ? window.location.href = "/" :  window.location.href = "/api"
     
     // redirection vers la page d'authentification 
 }
