@@ -25,3 +25,17 @@ await axios.delete("url/api/id_article_a_supprimer ");
 
 Promices
 axios.delete("url/api/id_article_a_supprimer ").then()
+
+
+cas pratique : 
+si vous cliquez sur un bouton modifier => remplir le formulaire qui est stocké dans le composant Hook
+
+=> fini de modifier le formulaire => la base de données et aussi la liste 
+
+ajouter une nouvelle propriété envoyé au formulaire par défaut vide 
+cliquer sur le bouton modifier => remplir avec les informations de l'article concerné
+
+=> ajouter dans le formulaire Hook ajouter un champ id masqué 
+en fonction du contenu de ce champ 
+si vide => ajout
+si il est rempli => update 

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 
 function Api (props){
     const [articles , setArticles] = useState([]);
+    const [article , setArticle] = useState({});
 
     async  function getData(){
         const {data} = await axios.get("http://localhost:3004/articles?isActif=true");
@@ -21,16 +22,20 @@ function Api (props){
         getData()
     }
 
+    const handleModif = (article) => {
+        setArticle(article)
+    }
+
     return (
         <>
             <h1>j'utilise une api</h1>
-            <Hook route={props}/>
+            <Hook refresh={getData} data={article}/>
             {articles.map((article, index) => {
                 return <h2 key={index}>
                         <Link to={`/api/${article.id}`}>
                             {article.titre}
                         </Link>
-                        <button className="mx-3 btn btn-warning">Modifier</button>
+                        <button className="mx-3 btn btn-warning" onClick={() => handleModif(article)}>Modifier</button>
                         <button className="btn btn-danger" onClick={() => handleDelete(article.id)} >Supprimer</button>
                     </h2>
             })}

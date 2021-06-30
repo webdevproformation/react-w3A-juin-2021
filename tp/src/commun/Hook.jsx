@@ -1,8 +1,9 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-function Hook({route}){
+function Hook({refresh, data}){
 
+    const [id, setId] = useState("");
     const [titre, setTitre] = useState("");
     const [contenu, setContenu] = useState("");
 
@@ -10,15 +11,33 @@ function Hook({route}){
         console.log("je suis exécuté une fois");
     } , []); // rafraichissement de la vue du composant // componentDidMount
 
+    useEffect(() => {
+        setId(data.id)
+        setTitre(data.titre);
+        setContenu(data.contenu);
+    }, [data])
+
     async function handleClick(){
-        console.log({titre, contenu})
-        const reponse = await axios.post("http://localhost:3004/articles", {titre, contenu});
-        console.log(route)
-        route.history.push("/");
+        /* console.log({titre, contenu}) */
+        if(id.length > 0){
+            // update à réaliser
+            const reponse = await axios.put(`http://localhost:3004/articles/${id}`, {id, titre, contenu , isActif : true});
+        }   else {
+            // insert à réaliser 
+            const reponse = await axios.post("http://localhost:3004/articles", {titre, contenu , isActif : true});
+        }
+        // réinitialise le formulaire 
+        setId("")
+        setTitre("");
+        setContenu("");
+
+        refresh();
+       
     }
    
     return (
         <div>
+            <input type="hidden"  value={id}  className="form-control"  />
             <input type="text" onChange={(e) => setTitre(e.currentTarget.value)} value={titre}
             placeholder="saisir un texte" className="form-control" />
             <textarea value={contenu} onChange={(e) => setContenu(e.currentTarget.value)}  placeholder="saisir un contenu"  className="form-control mt-3"></textarea>
