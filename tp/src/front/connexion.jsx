@@ -16,7 +16,8 @@ class Connexion extends Component {
         const {login, password} = this.state.identifiants;
         const verif = AuthLogin(login , password);
         if(verif){
-            window.location.href = "/admin";
+            //console.log(window.history.back())
+             window.location.href =  "/admin" ;
         }
     }
     render() { 

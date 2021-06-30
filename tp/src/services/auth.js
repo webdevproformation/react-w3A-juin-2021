@@ -24,6 +24,6 @@ export function logout(){
 export function isLogged(){
     // retourner true si il n'y a bien l'item  dans le localStorage
     // sinon retourner false 
-    console.log(!!localStorage.getItem("auth"))
+  
     return !!localStorage.getItem("auth");
 }
