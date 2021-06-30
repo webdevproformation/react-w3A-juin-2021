@@ -12,6 +12,9 @@ class Navbar extends React.Component {
         logout();
     }
     render() { 
+        console.log(this.props.history)
+        const back = document.referrer;
+        // bon appétit rdv 13h50 @ toute suite !! 
         return ( 
             <nav className="navbar navbar-expand navbar-light bg-light">
                 <Link to="/" className="navbar-brand">TP semaine 3</Link>
@@ -26,7 +29,7 @@ class Navbar extends React.Component {
                 <ul className="navbar-nav ms-auto d-flex align-items-center">
                     {!isLogged() && 
                     <li className="nav-item">
-                        <Link to="/connexion" className="nav-link">Connexion</Link>
+                        <Link to={`/connexion?prev=${back}`} className="nav-link">Connexion</Link>
                     </li>
                     }
                    

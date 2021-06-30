@@ -15,7 +15,7 @@ import ApiSingle from './front/ApiSingle';
 import Api from './front/Api'
 
 function App() {
-
+  console.log(window.location);
   return (
     <div className="container template">
       <header className="row">
