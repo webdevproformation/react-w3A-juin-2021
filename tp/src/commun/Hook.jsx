@@ -37,7 +37,7 @@ function Hook({refresh, data}){
    
     return (
         <div>
-            <input type="hidden"  value={id}  className="form-control"  />
+            <input type="hidden"  value={id}  className="form-control" data-id />
             <input type="text" onChange={(e) => setTitre(e.currentTarget.value)} value={titre}
             placeholder="saisir un texte" className="form-control" />
             <textarea value={contenu} onChange={(e) => setContenu(e.currentTarget.value)}  placeholder="saisir un contenu"  className="form-control mt-3"></textarea>
