@@ -29,7 +29,6 @@ const AddArticle = (props) => {
        setErreurs( verif.error.details )
 
 
-    
    }
     return (
         <>

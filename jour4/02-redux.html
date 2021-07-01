@@ -1,0 +1,51 @@
+créer un nouveau projet qui va s'appeler "demo-redux"
+
+cd .. 
+create-react-app demo-redux
+
+cd demo-redux
+yarn start
+
+---------------------
+
+créer dans le dossier bdd/ un fichier redux.json
+
+=> remplir ce fichier json generator
+
+
+{
+    articles : [
+        '{{repeat(5, 7)}}',
+        {
+        id: '{{objectId()}}',
+        title: '{{lorem(4, "words")}}',
+        body: '{{lorem(1, "paragraphs")}}',
+        picture: 'http://placehold.it/600x300',
+        author : '{{firstName()}} {{surname()}}',
+        like : '{{integer(0, 120)}}'
+        }
+    ],
+    users : [
+        '{{repeat(2, 5)}}',
+        {
+            id: '{{objectId()}}',
+            nom : '{{firstName()}} {{surname()}}',
+            email: '{{email()}}',
+            like : '{{integer(0, 120)}}'
+        }
+    ]
+}
+
+
+json-server --watch redux.json --port 3004
+
+http://localhost:3004/articles
+http://localhost:3004/users
+
+---------------------
+
+autre terminal 
+
+=> dans demo-redux => créer dans src le dossier composants
+
+

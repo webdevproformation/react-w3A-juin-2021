@@ -1,0 +1,76 @@
+{
+    "articles": [
+      {
+        "id": "60ddb0c955d40c9745408b35",
+        "title": "sit dolore ipsum in",
+        "body": "Laborum in mollit cupidatat minim dolore. Qui exercitation est officia excepteur. Eiusmod est veniam enim in ut consequat. Et culpa et aute nisi nulla elit do consequat elit eiusmod esse nulla. Consectetur duis veniam dolore ut.\r\n",
+        "picture": "http://placehold.it/600x300",
+        "author": "Ilene Gilmore",
+        "like": 98
+      },
+      {
+        "id": "60ddb0c9d8953ec39e97d009",
+        "title": "incididunt in incididunt sunt",
+        "body": "Elit incididunt Lorem sint aliqua irure aliquip enim quis ea ipsum minim veniam commodo. Aliqua sit dolor sit sunt Lorem fugiat tempor sint qui. Fugiat irure laboris nulla irure minim ex deserunt qui. Consectetur non non cupidatat et consequat ipsum aute reprehenderit excepteur aliquip commodo laborum veniam dolore. Sunt duis nostrud do minim proident in aliqua cillum amet occaecat id duis et. Reprehenderit cupidatat deserunt Lorem Lorem et.\r\n",
+        "picture": "http://placehold.it/600x300",
+        "author": "Holder Burks",
+        "like": 80
+      },
+      {
+        "id": "60ddb0c9a5cea3a8dc0d0b7d",
+        "title": "eiusmod esse occaecat consequat",
+        "body": "Eu consectetur amet nulla dolor esse. Non ea pariatur eiusmod nostrud dolor eiusmod. Ullamco ex officia aute consequat nulla non incididunt do tempor Lorem pariatur reprehenderit labore eu. Ullamco exercitation pariatur proident cillum.\r\n",
+        "picture": "http://placehold.it/600x300",
+        "author": "Margery Chandler",
+        "like": 91
+      },
+      {
+        "id": "60ddb0c9ff232d0df7d515dd",
+        "title": "nulla duis ut eu",
+        "body": "Ad aute eiusmod cillum amet aliqua eiusmod. Aute occaecat mollit laborum sint elit minim eiusmod elit amet sunt. Excepteur quis aute aute laborum deserunt esse Lorem nulla exercitation. Quis Lorem sunt sint deserunt non. Est aliqua adipisicing do eiusmod eiusmod. Fugiat laborum cillum consectetur cillum exercitation eiusmod commodo laboris dolor.\r\n",
+        "picture": "http://placehold.it/600x300",
+        "author": "Debra Mclaughlin",
+        "like": 41
+      },
+      {
+        "id": "60ddb0c97a48046cfe639935",
+        "title": "dolore velit veniam aliqua",
+        "body": "Veniam excepteur nulla magna nulla. Ad esse anim sunt commodo voluptate adipisicing id incididunt. Velit deserunt sit ullamco incididunt et ut et cupidatat laborum ex.\r\n",
+        "picture": "http://placehold.it/600x300",
+        "author": "Celia Hess",
+        "like": 73
+      }
+    ],
+    "users": [
+      {
+        "id": "60ddb0c9759f2a9c62f35130",
+        "nom": "Lavonne Carr",
+        "email": "lavonnecarr@andershun.com",
+        "like": 22
+      },
+      {
+        "id": "60ddb0c9d0f3e708e1805020",
+        "nom": "Kennedy Greer",
+        "email": "kennedygreer@andershun.com",
+        "like": 16
+      },
+      {
+        "id": "60ddb0c9e7e6f6ad3c68ffe8",
+        "nom": "Rene Head",
+        "email": "renehead@andershun.com",
+        "like": 29
+      },
+      {
+        "id": "60ddb0c9ad8a04b6072cebb8",
+        "nom": "Lucile Wolfe",
+        "email": "lucilewolfe@andershun.com",
+        "like": 34
+      },
+      {
+        "id": "60ddb0c91883d19c9a1e1100",
+        "nom": "Sharpe Banks",
+        "email": "sharpebanks@andershun.com",
+        "like": 115
+      }
+    ]
+  }
