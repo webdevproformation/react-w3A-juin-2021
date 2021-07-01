@@ -1,11 +1,23 @@
-
+import axios from "axios";
+import stringHash from "string-hash" ;
 // plusieurs fonctions 
 
-export function login(  login, password ){
+async function authentification(login , password) {
+    const passwordHashe = stringHash(password);
+    // SELECT * FROM users WHERE login = ${login} AND password = ${passwordHashe}
+    let { data } = await axios.get(`http://localhost:3004/users?login=${login}&password=${passwordHashe}`);
+    if(data.length === 0){
+        return false ;
+    }
+    return { id : data[0].id , login : data[0].login };
+}
+
+export async function login(  login, password ) {
     // ??? login ET password sont conformes 
-    if( login === "hello" && password === "les amis"){
+    const verif = await authentification(login , password);
+    if( verif ){
         // si ils sont conformes => localStorage => stocker une ok 
-        localStorage.setItem("auth","ok");
+        localStorage.setItem("auth",JSON.stringify(verif));
         return true;
     }
     return false;

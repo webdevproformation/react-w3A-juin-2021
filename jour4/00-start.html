@@ -1,0 +1,32 @@
+démarrer Visual Studio
+démarrer votre projet react yarn start // npm start 
+démarrer le back json-server --watch db.json --port 3004 
+
+http://localhost:3000/
+
+
+maintenant table pour gérer les utilisateurs => recherche dans la table users (db.json)
+
+=> est ce que il y a une personne 
+
+login : nouveauUser
+mdp : 1234 => hashé => 109950804
+
+cas pratique : 
+
+composant src/services/auth.js  => login
+
+appel via axios à la bdd => 
+recherche filter chaque enregistrement => login ET le mot de passe hashé si c'est ok 
+=> accepter 
+
+composant connexion => récupérer les informations saisies dans le formulaire 
+ET appeler une méthode login stockée dans le service 
+c'est dans le service que l'on va effectuer tous les traitements pour effectuer les vérifications
+
+ainsi le composant s'occupe de la vue et d'appeler les services 
+
+la service s'occupe de la logique / les traitements 
+
+
+

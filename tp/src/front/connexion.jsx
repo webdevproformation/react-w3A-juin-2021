@@ -11,10 +11,10 @@ class Connexion extends Component {
             identifiants : { ...this.state.identifiants , [name]:value }
         });
     }
-    handleSubmit = (e) => {
-        e.preventDefault();
+    handleSubmit = async (e) => {
+        e.preventDefault(); 
         const {login, password} = this.state.identifiants;
-        const verif = AuthLogin(login , password);
+        const verif = await AuthLogin(login , password);
         if(verif){
             //console.log(window.history.back())
              window.location.href =  "/admin" ;
