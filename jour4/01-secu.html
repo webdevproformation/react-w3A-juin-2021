@@ -7,3 +7,26 @@ effectuer des tests, éviter d'avoir à faire des if complexes
 yarn add @hapi/joi
 
 npm i @hapi/joi
+
+dans le composant Contact => ajouter dedans un formulaire 
+
+4 champs 
+    email => input de type email 
+    sujet  => input de type texte 
+    service menu déroulant => SAV / Service technique
+    message  => textarea 
+    bouton de soumission
+
+récupérer les informations saisies via useState pour chaque champ 
+
+une fois que vous avez soumis ce formulaire effectuer les vérifications suivantes avant insertion en base de données 
+
+email est conforme 
+sujet => contient au moins 5 lettres et au maximum 60lettres
+service => sav technique 
+message => contient au moins 5 lettres et au maximum 400 lettres
+
+si tout est conforme => ajouté en base de données 
+
+bdd/db.json ajouter une nouvelle valeur 
+,"contacts": []
