@@ -6,3 +6,6 @@ export default combineReducers({
     articleReducer,
     userReducer
 })
+
+// installer une extension sur votre navigateur 
+// firefox / chrome 
