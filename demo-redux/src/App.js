@@ -2,6 +2,7 @@ import Article from "./composants/Article";
 import Panneau from './composants/Panneau';
 import Form from "./composants/Form";
 import Menu from "./composants/Menu";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useState } from "react";
 
