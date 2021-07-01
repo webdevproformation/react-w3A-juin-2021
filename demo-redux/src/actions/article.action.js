@@ -5,10 +5,13 @@ import axios from "axios";
 
 export const GET_ARTICLES = "GET_ARTICLES";
 export const ADD_ARTICLE = "ADD_ARTICLE";
+export const DELETE_ARTICLE = "DELETE_ARTICLE";
+
+const url = "http://localhost:3004/articles"
 
 export const getArticles = () => {
     return (dispatch) => {
-        return axios.get("http://localhost:3004/articles")
+        return axios.get(url)
                .then((reponse) => { dispatch({type: GET_ARTICLES , payload : reponse.data}) })
                .catch((err) => console.log(new Error(err)))
     }
@@ -16,8 +19,16 @@ export const getArticles = () => {
 
 export const addArticle = ( article ) => {
     return (dispatch) => {
-        return axios.post("http://localhost:3004/articles" , article)
+        return axios.post(url, article)
                 .then((reponse) => {dispatch({type:ADD_ARTICLE , payload : reponse.data})})
                 .catch((err) => console.log(new Error(err)))
+    }
+}
+
+export const deleteArticle = (id) => {
+    return (dispatch) => {
+        axios.delete(`${url}/${id}`)
+            .then((reponse) => { dispatch({type: DELETE_ARTICLE , payload : id } ) })
+            .catch((err => console.log(new Error(err))))
     }
 }

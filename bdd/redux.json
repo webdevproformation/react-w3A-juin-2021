@@ -1,14 +1,6 @@
 {
   "articles": [
     {
-      "id": "60ddb0c955d40c9745408b35",
-      "title": "toto",
-      "body": "Laborum in mollit cupidatat minim dolore. Qui exercitation est officia excepteur. Eiusmod est veniam enim in ut consequat. Et culpa et aute nisi nulla elit do consequat elit eiusmod esse nulla. Consectetur duis veniam dolore ut.\r\n",
-      "picture": "http://placehold.it/600x300",
-      "author": "Ilene Gilmore",
-      "like": 98
-    },
-    {
       "id": "60ddb0c9d8953ec39e97d009",
       "title": "incididunt in incididunt sunt",
       "body": "Elit incididunt Lorem sint aliqua irure aliquip enim quis ea ipsum minim veniam commodo. Aliqua sit dolor sit sunt Lorem fugiat tempor sint qui. Fugiat irure laboris nulla irure minim ex deserunt qui. Consectetur non non cupidatat et consequat ipsum aute reprehenderit excepteur aliquip commodo laborum veniam dolore. Sunt duis nostrud do minim proident in aliqua cillum amet occaecat id duis et. Reprehenderit cupidatat deserunt Lorem Lorem et.\r\n",
@@ -31,20 +23,6 @@
       "picture": "http://placehold.it/600x300",
       "author": "Debra Mclaughlin",
       "like": 41
-    },
-    {
-      "id": "60ddb0c97a48046cfe639935",
-      "title": "dolore velit veniam aliqua",
-      "body": "Veniam excepteur nulla magna nulla. Ad esse anim sunt commodo voluptate adipisicing id incididunt. Velit deserunt sit ullamco incididunt et ut et cupidatat laborum ex.\r\n",
-      "picture": "http://placehold.it/600x300",
-      "author": "Celia Hess",
-      "like": 73
-    },
-    {
-      "title": "nouvel article ",
-      "body": "un peu de contenu \npour l'article",
-      "like": 0,
-      "id": "l7ZE-mV"
     }
   ],
   "users": [
