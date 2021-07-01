@@ -1,9 +1,13 @@
-import Article from "./composants/Article";
+
 import Panneau from './composants/Panneau';
 import Form from "./composants/Form";
 import Menu from "./composants/Menu";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useSelector } from "react-redux";
+
+import { FormUser } from './composants/FormUser';
+import {Route} from "react-router-dom";
+import {Home} from './composants/Home';
+
 
 function App() {
   /* const [ articles ] = useState(() => {
@@ -14,7 +18,7 @@ function App() {
     return data ;
   }); */
 
-  const  articles = useSelector((state) => { return state.articleReducer })
+  
 
 
 // rdv 15h50 @ toute suite !! 
@@ -23,8 +27,10 @@ function App() {
     <Menu />
     <div className="container">
       <div className="row"> 
+
         <main className="col-9 row">
-            { articles.map((article , index) => <Article key={index} article={article} />)}
+            <Route path="/add-user" component={FormUser}  />
+            <Route path="/" exact component={Home} />
         </main>
         <aside className="col-3 ">
           <div className="sticky-top">
