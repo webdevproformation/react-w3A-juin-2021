@@ -19,6 +19,7 @@ import { isLogged } from './services/auth';
 import NotFound from './front/not-found';
 import { AddUser } from './back/users/addUser';
 import { UpdateUser } from './back/users/updateUser';
+import {Contact} from "./front/Contact";
 
 
 
@@ -30,12 +31,13 @@ function App() {
         <Navbar />
       </header>
       <main className="row">
+          <Route path="/contact" component={Contact} />
           <Route path="/api/:id" component={ApiSingle} />
           <Route path="/api" component={Api} exact />
           <Route path="/admin/user-modif/:id" render={ (props) => { return (isLogged()) ? <UpdateUser  {...props} /> : <Forbidden /> } }/>
           <Route path="/admin/user-add" render={ (props) => { return (isLogged()) ? <AddUser  {...props} /> : <Forbidden /> } }/>
-          <Route path="/admin/modif/:id" render={ () => { return (isLogged()) ? <UpdateArticle /> : <Forbidden /> } }/>
-          <Route path="/admin/add" render={ () => { return (isLogged()) ? <AddArticle /> : <Forbidden /> } }/>
+          <Route path="/admin/modif/:id" render={ (props) => { return (isLogged()) ? <UpdateArticle {...props} /> : <Forbidden /> } }/>
+          <Route path="/admin/add" render={ (props) => { return (isLogged()) ? <AddArticle {...props} /> : <Forbidden /> } }/>
           <Route path="/admin" render={ () => { return (isLogged()) ? <Dashboard /> : <Forbidden /> } }   exact />
           <Route path="/article/:id" component={Single} />
           <Route path="/connexion" component={Connexion} />

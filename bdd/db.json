@@ -111,9 +111,14 @@
   ],
   "users": [
     {
-      "login": "nouveauUser", 
+      "login": "nouveauUser",
       "id": 3,
       "password": 109950804
+    },
+    {
+      "login": "toto",
+      "id": 4,
+      "password": 2087566853
     }
   ]
 }

@@ -24,6 +24,9 @@ class Navbar extends React.Component {
                     <li className="nav-item">
                         <Link to="/api" className="nav-link">Api</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link to="/contact" className="nav-link">Contact</Link>
+                    </li>
                 </ul>
                 <ul className="navbar-nav ms-auto d-flex align-items-center">
                     {!isLogged() && 
