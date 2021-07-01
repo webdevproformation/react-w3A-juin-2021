@@ -16,21 +16,15 @@ function App() {
 
   const  articles = useSelector((state) => { return state.articleReducer })
 
-  const isEmpty = (value) => {
-    return value === undefined ||
-        value === null ||
-        (typeof value === "object" && Object.keys(value).length === 0) ||
-        (typeof value === "string" && Object.trim().length === 0)
-}
 
-
+// rdv 15h50 @ toute suite !! 
   return (
     <>
     <Menu />
     <div className="container">
       <div className="row"> 
         <main className="col-9 row">
-            { !isEmpty(articles) && articles.map((article , index) => <Article key={index} article={article} />)}
+            { articles.map((article , index) => <Article key={index} article={article} />)}
         </main>
         <aside className="col-3 ">
           <div className="sticky-top">
