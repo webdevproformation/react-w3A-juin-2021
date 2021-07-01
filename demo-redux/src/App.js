@@ -3,24 +3,34 @@ import Panneau from './composants/Panneau';
 import Form from "./composants/Form";
 import Menu from "./composants/Menu";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import { useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [ articles ] = useState(() => {
+  /* const [ articles ] = useState(() => {
     const data = [];
     for(let i = 1; i <= 20 ; i++){
       data.push({_id : i , title : `titre ${i}` , body : "contenu" , auteur : "auteur" , like : Math.floor(Math.random() * 10) + 1})
     }
     return data ;
-  });
+  }); */
+
+  const  articles = useSelector((state) => { return state.articleReducer })
+
+  const isEmpty = (value) => {
+    return value === undefined ||
+        value === null ||
+        (typeof value === "object" && Object.keys(value).length === 0) ||
+        (typeof value === "string" && Object.trim().length === 0)
+}
+
+
   return (
     <>
     <Menu />
     <div className="container">
-      <div className="row">
+      <div className="row"> 
         <main className="col-9 row">
-            { articles.map((article , index) => <Article key={index} article={article} />)}
+            { !isEmpty(articles) && articles.map((article , index) => <Article key={index} article={article} />)}
         </main>
         <aside className="col-3 ">
           <div className="sticky-top">
