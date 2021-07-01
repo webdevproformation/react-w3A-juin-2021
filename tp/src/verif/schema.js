@@ -6,3 +6,10 @@ export const schemaContact = Joi.object({
     message : Joi.string().min(3).max(200).required(),
     service : Joi.string().allow("sav", "technique")
 });
+
+export const schemaArticle = Joi.object({
+    titre : Joi.string().min(3).max(100).required(),
+    contenu : Joi.string().min(3).max(400).required(),
+    isActif : Joi.bool(),
+    like : Joi.number().equal(0)
+})

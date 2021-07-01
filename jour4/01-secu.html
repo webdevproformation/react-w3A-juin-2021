@@ -30,3 +30,19 @@ si tout est conforme => ajouté en base de données
 
 bdd/db.json ajouter une nouvelle valeur 
 ,"contacts": []
+
+
+
+dans le fichier src/verif/schema.js 
+
+ajouter un nouveau schéma de validation pour les articles 
+
+3 champs à vérifier
+titre texte au minimum => 3 / maximum 100
+contenu  texte au minimum => 3 / maximum 400
+status => boolean true / false 
+
+=> utiliser ce schéma dans le composant 
+src/back/article/AddArticle 
+
+=> si un teste n'est pas conforme => afficher une zone de message en bas du formulaire pour expliquer ce qu'il manque ! 
