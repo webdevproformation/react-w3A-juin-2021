@@ -1,16 +1,25 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {addArticle , getArticles} from "../actions/article.action";
 
 const Form = () => {
 
     const [article , setArticle]= useState(() => {return {title : "" , body : "", like : 0}})
+    
+    const dispatch = useDispatch();
 
     const submit = e => {
         e.preventDefault();
+
+        dispatch(addArticle(article)); // créer l'article en BDD et mettre à jour le store
+
+        dispatch(getArticles()); // mettre à jour la liste des articles 
+        // vider le formulaire
+        setArticle({title : "" , body : "", like : 0});
     }
 
     const change = e => {
         const {value, name} = e.currentTarget ;
-        console.log(value, name);
         setArticle(prevArticle => {
             return { ...prevArticle, [name] : value }
         });
