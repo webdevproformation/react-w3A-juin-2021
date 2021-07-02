@@ -18,6 +18,8 @@ export default function articleReducer(state = initialState , action){
             return cloneState ; // retourner le state modifié
         default : 
             return initialState
+
+            // rdv 11h05 @ toute suite !!!!!!!!!!!!!!!!
     }
 }
 

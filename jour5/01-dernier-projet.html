@@ -1,0 +1,48 @@
+
+base de données 
+
+créer dans le dossier bdd un nouveau fichier 
+depenses.json
+
+une table 
+
+{
+    "elements" : [
+        {"id" : 1 , "nom": "produit 1", "montant" : 100},
+        {"id" : 2 , "nom": "produit 2", "montant" : -50},
+    ]
+}
+activer cette base via json placeholder
+
+
+----------------- 
+
+créer une application react / utilise redux 
+
+create-react-app tp-final 
+cd tp-final 
+yarn add redux react-redux redux-thunk redux-devtools-extension 
+yarn add bootstrap 
+yarn add @hapi/joi 
+yarn add axios
+
+
+dispose de plusieurs composants :
+
+    1 composant total => -50€ => fait le total de toutes les dépenses et recette 
+    2 composant deux colonnes 
+            somme dépenses => somme -négatives
+            somme recette  => somme +positives
+    3 le détail
+            afficher chaque élément de la base  3.1 item 
+                    modifier / supprimer 
+    4 formulaire 
+            input de type texte => nom 
+            input de number => montant => positif ou négatif 
+            input submit ajouter à la base de donnée et dans le store 
+            utiliser @hapi/joi pour vérifier que les données sont conformes aux attentes de la base de données 
+
+utiliser tous les concepts vus ensemble pour réaliser ce cas pratique 
+
+https://icons.getbootstrap.com/
+

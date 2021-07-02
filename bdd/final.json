@@ -1,0 +1,19 @@
+{
+  "elements": [
+    {
+      "nom": "salaire",
+      "montant": 200,
+      "id": 4
+    },
+    {
+      "nom": "Salaire fin de mois",
+      "montant": 400,
+      "id": 6
+    },
+    {
+      "nom": "autre montant",
+      "montant": 2000,
+      "id": 7
+    }
+  ]
+}
