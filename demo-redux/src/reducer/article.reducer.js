@@ -1,4 +1,4 @@
-import { GET_ARTICLES , ADD_ARTICLE , DELETE_ARTICLE } from "../actions/article.action";
+import { GET_ARTICLES , ADD_ARTICLE , DELETE_ARTICLE , UPDATE_ARTICLE } from "../actions/article.action";
 
 const initialState = [] ;
 
@@ -10,6 +10,12 @@ export default function articleReducer(state = initialState , action){
             return [action.payload,...state]
         case DELETE_ARTICLE : 
             return state.filter((item) => { return item.id !== action.payload})
+        case UPDATE_ARTICLE :
+            const cloneState = [...state];
+            const articleAModifier = cloneState.find((article) => { return article.id ===  action.payload.id });
+            const index = cloneState.indexOf(articleAModifier);
+            cloneState[index].body = action.payload.body ; // update 
+            return cloneState ; // retourner le state modifié
         default : 
             return initialState
     }

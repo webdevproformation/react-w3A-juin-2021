@@ -1,10 +1,11 @@
 import  Like  from "./Like" ; 
 import { useDispatch } from "react-redux";
-import { deleteArticle , getArticles } from "../actions/article.action";
+import { deleteArticle , getArticles  , updateArticle   } from "../actions/article.action";
 import {useState} from "react";
 
 const Article = (props) => {
     const {title , body , auteur , like, id} = props.article;
+    const [bodyModif, setBodyModif] = useState(body);
     const [edition, setEdition] = useState(false);
     const dispatch = useDispatch();
     const handleClick = (id) =>{
@@ -13,6 +14,22 @@ const Article = (props) => {
        // dispatch(getArticles());
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const articleModifie = {
+            id : id ,
+            body : bodyModif
+        }
+        dispatch(updateArticle(articleModifie));
+        setEdition(false); 
+        dispatch(getArticles());
+    }
+    const formulaire = <form onSubmit={handleSubmit}>
+        <input type="hidden" value={id}/>
+        <textarea value={bodyModif} className="form-control" rows="6" onChange={(e) => setBodyModif(e.currentTarget.value)}></textarea>
+        <input type="submit" className="btn btn-success mt-3" value="valider modif"/>
+    </form> 
+
     return <div className="col-6">
         <article className="card mb-4">
             <header className="card-header">
@@ -20,10 +37,7 @@ const Article = (props) => {
             </header>
             <div className="card-body">
                 <img src="http://placehold.it/600x300" alt="" className="img-thumbnail mb-2"/>
-                {edition ? <form>
-                    <textarea value={body} className="form-control" rows="6"></textarea>
-                </form>  :  <p className="mb-0">{body}</p> }
-                
+                {edition ? formulaire  :  <p className="mb-0">{body}</p> }
             </div>
             <footer className="card-footer d-flex justify-content-between">
                 {/* <p className="mb-0">{auteur}</p> */}
@@ -31,7 +45,6 @@ const Article = (props) => {
                     <button className="btn btn-danger" onClick={() => {handleClick(id)}}> supprimer </button>
                     <button className="btn btn-warning ms-3" onClick={() => setEdition(!edition)}> modifier </button>
                 </div>
-               
                 <Like nb={like}/>
             </footer>
         </article>
