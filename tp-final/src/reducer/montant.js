@@ -11,11 +11,17 @@ export const reducer = (state = initialState , action ) => {
         case DELETE_MONTANT :
             return state.filter((item) => { return item.id !== action.payload })
         case UPDATE_MONTANT :
-            return state.map((item) => {
-                if(item.id === action.payload.id){
-                    item = action.payload
-                }
-            })
+              return state.map((operation) => {
+                  if(operation.id === action.payload.id){
+                        return {
+                            id : action.payload.id,
+                            nom : action.payload.nom,
+                            montant : action.payload.montant
+                            }
+                    } else {
+                        return  operation; 
+                    }                 
+                })
         default : 
             return state ;
     }

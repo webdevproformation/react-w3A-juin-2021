@@ -19,15 +19,18 @@ const Item = ({operation}) => {
         const operationModifiee = {
             id : operation.id,
             nom : modifNom ,
-            montant :  modifMontant
+            montant :  +modifMontant
         }
+        // 
+        console.log(operationModifiee);
+
         const verif =  schemaOperation.validate(operationModifiee);
         if(!Object.keys(verif).includes("error")){
             // ajouter en base de donnée les info et mettre à jour le store 
             dispatch(updateMontant(operationModifiee));
             dispatch(getMontants());
             setModif(false);
-        } 
+        }  
     }
 
     const normal = <>
@@ -39,7 +42,7 @@ const Item = ({operation}) => {
         <form className="d-flex" onSubmit={handleSubmit}>
             <input type="hidden" value={operation.id}  className="form-control" />
             <input type="text" value={modifNom}  className="form-control w-50" onChange={e => setModifNom(e.currentTarget.value) }/>
-            <input type="number" value={modifMontant} className="form-control  w-25" nChange={e => setModifMontant(e.currentTarget.value) }/>
+            <input type="number" value={ modifMontant } className="form-control  w-25" onChange={e => setModifMontant(e.currentTarget.value) }/>
             <input type="submit"  className="btn btn-warning" value="OK"/>
         </form>    
     </td>;
