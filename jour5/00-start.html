@@ -1,0 +1,19 @@
+redémarrer Visual Studio
+react yarn start => demo-redux 
+démarrer le back => json-serve --watch redux.json --port 3004
+
+http://localhost:3000
+
+Cas pratique : 
+
+ajouter un bouton modifier sur chaque Article.jsx 
+2 dans le composant article 
+=> edition 
+const [edition, setEdition] = false ;
+
+si cette variable "edition" est false => afficher le contenu de l'article 
+si cette variable est true remplacer le 
+<p className="mb-0">{body}</p>
+par un formulaire 
+    1 seul champ textarea qui contient le body 
+    1 bouton pour update 

@@ -1,12 +1,20 @@
-import {useState} from "react"
-import { useDispatch } from "react-redux";
-import { addUser } from "../actions/user.action";
+import {useState , useEffect} from "react"
+import { useDispatch , useSelector } from "react-redux";
+import { addUser, getUsers } from "../actions/user.action";
 
 export const FormUser = () => {
 
     const [nom, setNom] = useState("")
     const [email, setEmail] = useState("")
+
     const dispatch = useDispatch();
+    const users = useSelector((state) => { return state.userReducer })
+
+    useEffect(() => {
+        dispatch(getUsers());
+       // console.log(users);
+    },[])
+   
     function handleSubmit(e){
         e.preventDefault();
         

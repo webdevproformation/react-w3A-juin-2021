@@ -13,7 +13,7 @@ const Form = () => {
 
         dispatch(addArticle(article)); // créer l'article en BDD et mettre à jour le store
 
-        dispatch(getArticles()); // mettre à jour la liste des articles 
+        // dispatch(getArticles()); // mettre à jour la liste des articles 
         // vider le formulaire
         setArticle({title : "" , body : "", like : 0});
     }
